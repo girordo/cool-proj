@@ -1,7 +1,10 @@
 import { Elysia } from "elysia";
 import { html } from "@elysiajs/html";
 
-const app = new Elysia().get("/", () => "Hello BETH Stack World!").listen(3000);
+const app = new Elysia()
+	.use(html())
+	.get("/", ({ html }) => html(baseHtml))
+	.listen(3000);
 console.log(`🦊Elysia is running at http://${app.server?.hostname}:${app.server?.port}`);
 
 const baseHtml = `
