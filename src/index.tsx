@@ -13,6 +13,17 @@ const app = new Elysia()
 	</body>
 	</BaseHtml>))
 	.post("/clicked", () => <div>I'M FROM THE SERVERRRR!</div>)
+	.group(
+		"/api", (app) =>
+		app.use(
+			jwt({
+				name: "jwt",
+				secret: Bun.env.JWT_SECRET!,
+			})
+		)
+		.use(cookie())
+		// .use(auth)
+	)
 	.listen(3000);
 
 console.log(`🦊Elysia is running at http://${app.server?.hostname}:${app.server?.port}`);
