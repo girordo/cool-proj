@@ -1,4 +1,6 @@
 import { Elysia } from "elysia";
+import { cookie } from "@elysiajs/cookie";
+import { jwt } from "@elysiajs/jwt";
 import { html } from "@elysiajs/html";
 import * as elements from "typed-html";
 

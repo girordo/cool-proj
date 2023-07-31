@@ -10,7 +10,9 @@
     "typescript": "^5.0.0"
   },
   "dependencies": {
+    "@elysiajs/cookie": "^0.5.2",
     "@elysiajs/html": "^0.5.2",
+    "@elysiajs/jwt": "^0.5.3",
     "elysia": "^0.5.25"
   }
 }
